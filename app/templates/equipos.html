@@ -1,0 +1,12 @@
+{% extends 'base.html' %}
+
+{% block content %}
+<h1>Equipos</h1>
+<ul>
+    {% for equipo in equipos %}
+        <li>{{ equipo.nombre }} - {{ equipo.modelo }} - {{ equipo.categoria }} - ${{ equipo.costo }}
+            <a href="{{ url_for('main.edit_equipo', id=equipo.id) }}">Edit</a>
+        </li>
+    {% endfor %}
+</ul>
+{% endblock %}
